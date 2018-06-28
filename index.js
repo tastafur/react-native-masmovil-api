@@ -1,14 +1,14 @@
 const express = require('express');
 
-const index = express();
+const app = express();
 
-index.use(function(req, res, next) {
+app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-index.post('/login', (req, res) => {
+app.post('/login', (req, res) => {
   if(!req.body.user) {
     return res.status(422).json({errors: {user: "can't be blank"}});
   }
@@ -27,5 +27,5 @@ index.post('/login', (req, res) => {
   }
 });
 
-index.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
