@@ -14,18 +14,17 @@ app.post('/', (req, res) => {
   if(!req.body.user) {
     return res.status(422).json({errors: {user: "can't be blank"}});
   }
-
   if(req.body.user && !req.body.user.email){
     return res.status(422).json({errors: {email: "can't be blank"}});
   }
-
   if(req.body.user && !req.body.user.password){
     return res.status(422).json({errors: {password: "can't be blank"}});
   }
+
   if(req.body.user && req.body.user.email === 'ruben.romero@guidesmiths.com' && req.body.user.password ==='123456') {
-    res.status(200);
+    res.sendStatus(200);
   } else {
-    res.status(401);
+    res.sendStatus(401);
   }
 });
 
