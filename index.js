@@ -10,7 +10,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.post('/', (req, res) => {
+app.post('/login', (req, res) => {
   if(!req.body.user) {
     return res.status(422).json({errors: {user: "can't be blank"}});
   }
