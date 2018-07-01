@@ -2,7 +2,9 @@
   "name": "react-native-masmovil-api",
   "version": "0.0.1",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "staging-deploy": "RNM_BRANCH=staging make release",
+    "prod-deploy": "RNM_BRANCH=prod make release"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
