@@ -22,9 +22,9 @@ app.post('/login', (req, res) => {
   }
 
   if(req.body.user && req.body.user.email === 'ruben.romero@guidesmiths.com' && req.body.user.password ==='123456') {
-    res.sendStatus(200);
+    res.status(200).json({result: 'ok'});
   } else {
-    res.sendStatus(401);
+    res.status(401).json({result: 'ko'});;
   }
 });
 
